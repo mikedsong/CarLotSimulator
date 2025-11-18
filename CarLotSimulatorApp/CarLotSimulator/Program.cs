@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml;
 using Microsoft.Win32.SafeHandles;
 
 namespace CarLotSimulator
@@ -19,14 +20,14 @@ namespace CarLotSimulator
             //Now that the Car class is created we can instanciate 3 new cars
             //Set the properties for each of the cars
             //Call each of the methods for each car
-            Car a  = new Car();
+            Car a = new Car();
             a.Make = "Volvo";
             a.Year = 2015;
             a.Model = "xc90";
             a.IsDriveable = true;
-            a.makeEngineNoise("vroom");
-            a.makeHonkNoise("honk");
-           
+            a.MakeEngineNoise("vroom");
+            a.MakeHonkNoise("honk");
+
 
 
 
@@ -34,8 +35,8 @@ namespace CarLotSimulator
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
             Car b = new Car("Mercedes", "E350", 2012, true);
-            b.makeHonkNoise("Beep");
-            b.makeEngineNoise("Brrr");
+            b.MakeHonkNoise("Beep");
+            b.MakeEngineNoise("Brrr");
             Car c = new Car()
             {
                 Make = "Toyota",
@@ -43,9 +44,9 @@ namespace CarLotSimulator
                 Model = "Camry",
                 IsDriveable = false,
             };
-            c.makeHonkNoise("Deet");
-            c.makeEngineNoise("Woosh");
-            
+            c.MakeHonkNoise("Deet");
+            c.MakeEngineNoise("Woosh");
+
 
             //*************BONUS X 2*************//
 
@@ -60,75 +61,8 @@ namespace CarLotSimulator
 
             foreach (var cars in d.aListOfCars)
             {
-                Console.WriteLine("this " +cars.Make +" "+cars.Model+" is made in "+cars.Year);
+                Console.WriteLine($"this {cars.Make} {cars.Model} is made in {cars.Year}" );
             }
         }
-    }
-
-    public class Car
-    {
-        
-        public Car(){
-            
-        }
-        
-
-        public int Year
-        {
-            get; set;
-        }
-        public String Make
-        {
-            get; set;
-        }
-        public String Model
-        {
-            get; set;
-        }
-        public String EngineNoise
-        {
-            get; set;
-        }
-        public String HonkNoise
-        {
-            get; set;
-        }
-        public bool IsDriveable
-        {
-            get; set;
-        }
-
-        public void makeEngineNoise(String enNoise)
-        {
-            EngineNoise = enNoise;
-            Console.WriteLine(Make+" "+Model+" has an Engine Noise of" +EngineNoise);
-        }
-        public void makeHonkNoise(String honNoise)
-        {
-            HonkNoise = honNoise;
-            Console.WriteLine(Make+" "+Model+" has a Honk Noise of" +HonkNoise);
-        }
-        public Car(String Ma, String Mo, int y, bool isD){
-            Make = Ma;
-            Model = Mo;
-            Year = y;
-            IsDriveable = isD;
-
-        }
-
-
-    }
-
-    public class Carlot
-    {
-        public Carlot()
-        {
-            
-        }
-
-        public List<Car> aListOfCars
-        {
-            get; set;
-        } = new List<Car>();
     }
 }
