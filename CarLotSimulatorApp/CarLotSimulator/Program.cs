@@ -25,8 +25,9 @@ namespace CarLotSimulator
             a.Year = 2015;
             a.Model = "xc90";
             a.IsDriveable = true;
-            a.MakeEngineNoise("vroom");
-            a.MakeHonkNoise("honk");
+            Console.WriteLine($"Number of Cars in the lot is  {Carlot.numberOfCars}");
+            //a.MakeEngineNoise("vroom");
+            //a.MakeHonkNoise("honk");
 
 
 
@@ -35,8 +36,9 @@ namespace CarLotSimulator
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
             Car b = new Car("Mercedes", "E350", 2012, true);
-            b.MakeHonkNoise("Beep");
-            b.MakeEngineNoise("Brrr");
+            Console.WriteLine($"Number of Cars in the lot is  {Carlot.numberOfCars}");
+           // b.MakeHonkNoise("Beep");
+            //b.MakeEngineNoise("Brrr");
             Car c = new Car()
             {
                 Make = "Toyota",
@@ -44,8 +46,9 @@ namespace CarLotSimulator
                 Model = "Camry",
                 IsDriveable = false,
             };
-            c.MakeHonkNoise("Deet");
-            c.MakeEngineNoise("Woosh");
+            Console.WriteLine($"Number of Cars in the lot is  {Carlot.numberOfCars}");
+            //c.MakeHonkNoise("Deet");
+           // c.MakeEngineNoise("Woosh");
 
 
             //*************BONUS X 2*************//
@@ -55,13 +58,14 @@ namespace CarLotSimulator
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
             Carlot d = new Carlot();
-            d.aListOfCars.Add(a);
-            d.aListOfCars.Add(b);
-            d.aListOfCars.Add(c);
+            //d.aListOfCars.Add(a);
+            //d.aListOfCars.Add(b);
+            //d.aListOfCars.Add(c);
+            
 
-            foreach (var cars in d.aListOfCars)
+            //foreach (var cars in d.aListOfCars)
             {
-                Console.WriteLine($"this {cars.Make} {cars.Model} is made in {cars.Year}" );
+                //Console.WriteLine($"this {cars.Make} {cars.Model} is made in {cars.Year}" );
             }
         }
     }
